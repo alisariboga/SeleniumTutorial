@@ -1,12 +1,13 @@
 package com.cybertek.OfficeHourse;
 
+import com.cybertek.utilities.BrowserFactory;
 import com.cybertek.utilities.SeleniumUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 
 public class ExpediaTests {
-    static WebDriver driver = BrowserFactoryOfficeHour.getDriver("Chrome");
+    static WebDriver driver = BrowserFactory.getDriver("chrome");
 
 
     public static void main(String[] args) throws Exception {
@@ -17,11 +18,12 @@ public class ExpediaTests {
 
     public static void openHomePage() {
         driver.manage().window().maximize();
+        Library.sleep(3);
         driver.get("https://www.expedia.com/");
         String expectedTitle = "Expedia Travel: Vacation Homes, Hotels, Car Rentals, Flights & More";
-        SeleniumUtils.waitPlease(3);
+        Library.sleep(2);
         String actualTitle = driver.getTitle();
-        SeleniumUtils.waitPlease(3);
+        Library.sleep(2);
         SeleniumUtils.verifyEquals(expectedTitle, actualTitle);
     }
 
@@ -29,8 +31,8 @@ public class ExpediaTests {
         driver.findElement(By.id("uitk-tab-active")).click();
         driver.findElement(By.id("location-field-leg1-origin-menu-trigger")).sendKeys("Washington (WAS - All Airports)");
         driver.findElement(By.id("location-field-leg1-destination-menu-trigger")).sendKeys("Houston (HOU - All Airports)");
-        driver.findElement(By.id("d1-btn")).sendKeys("31/06/2023");
-        driver.findElement(By.id("d2-btn")).sendKeys("23/07/2023");
+        driver.findElement(By.id("d1-btn")).sendKeys("31/6/2023");
+        driver.findElement(By.id("d2-btn")).sendKeys("23/7/2023");
         driver.findElement(By.id("submit-button")).click();
         Thread.sleep(3000);
     }

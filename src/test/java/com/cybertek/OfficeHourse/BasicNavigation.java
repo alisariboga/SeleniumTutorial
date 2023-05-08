@@ -1,12 +1,13 @@
 package com.cybertek.OfficeHourse;
 
+import com.cybertek.utilities.BrowserFactory;
 import org.openqa.selenium.WebDriver;
 
 public class BasicNavigation {
 
     public static void main(String[] args) {
-        WebDriver driver = BrowserFactoryOfficeHour.getDriver("chrome");
-        driver.get("http://ggole.com");
+        WebDriver driver = BrowserFactory.getDriver("chrome");
+        driver.get("http://google.com");
         driver.navigate().to("htpp://amazon.com");
         driver.navigate().back(); //navigate back in browser history
         driver.navigate().forward(); //navigate forward in browser history
