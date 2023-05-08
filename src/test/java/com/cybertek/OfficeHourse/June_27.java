@@ -87,7 +87,7 @@ public class June_27 {
 
         /*
         Differences between quite() and close();
-                    close(): closes the one siongle tab.
+                    close(): closes the one single tab.
                     quite(): closes the entire tab and browser
          */
         driver.quit();
