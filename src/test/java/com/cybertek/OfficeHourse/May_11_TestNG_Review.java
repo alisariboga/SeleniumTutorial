@@ -3,7 +3,7 @@ package com.cybertek.OfficeHourse;
 import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
-public class July_11_TestNG_Review {
+public class May_11_TestNG_Review {
     /*
     Topic: TestNG
         @Test: a test case
