@@ -38,7 +38,7 @@ public class ActionsClassTests {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
-    @Test
+    @Test(priority = 1)
     public void hoverTest1() {
         driver.get("http://practice.cybertekschool.com/hovers");
         //We are creating object of Actions class
@@ -54,7 +54,7 @@ public class ActionsClassTests {
 
     }
 
-    @Test
+    @Test(priority = 2)
     public void hoverTest2() {
         driver.get("http://practice.cybertekschool.com/hovers");
         //We are creating object of Actions class
@@ -67,15 +67,15 @@ public class ActionsClassTests {
         }
     }
 
-    @Test
-    public void hoverTest3() {
+    @Test(priority = 3)
+    public void hoverTestEnableButtonDownloadOptionPDF() {
         driver.get("http://practice.cybertekschool.com/jqueryui/menu#");
         Actions action = new Actions(driver);
         WebElement enabledElement = driver.findElement(By.cssSelector(enabledOptionLocator));
         WebElement downloadsElement = driver.findElement(By.cssSelector(downloadsOptionLocator));
         WebElement pdfElement = driver.findElement(By.cssSelector(pdfOptionLocator));
-//        WebElement csvElement = driver.findElement(By.id(downloadsOptionLocator));
-//        WebElement excelElement = driver.findElement(By.id(downloadsOptionLocator));
+        WebElement csvElement = driver.findElement(By.id(csvOptionLocator));
+        WebElement excelElement = driver.findElement(By.id(excelOptionLocator));
 
         action.moveToElement(enabledElement)
                 .pause(1000).moveToElement(downloadsElement)
@@ -83,7 +83,35 @@ public class ActionsClassTests {
         SeleniumUtils.waitPlease(2); //Just For Demo
     }
 
-    @Test
+    @Test(priority = 4)
+    public void hoverTestEnableButtonDownloadOptionCSV() {
+        driver.get("http://practice.cybertekschool.com/jqueryui/menu#");
+        Actions action = new Actions(driver);
+        WebElement enabledElement = driver.findElement(By.cssSelector(enabledOptionLocator));
+        WebElement downloadsElement = driver.findElement(By.cssSelector(downloadsOptionLocator));
+        WebElement csvElement = driver.findElement(By.id(csvOptionLocator));
+
+        action.moveToElement(enabledElement)
+                .pause(1000).moveToElement(downloadsElement)
+                .pause(1000).moveToElement(csvElement).build().perform();
+        SeleniumUtils.waitPlease(2); //Just For Demo
+    }
+
+    @Test(priority = 5)
+    public void hoverTestEnableButtonDownloadOptionExcel() {
+        driver.get("http://practice.cybertekschool.com/jqueryui/menu#");
+        Actions action = new Actions(driver);
+        WebElement enabledElement = driver.findElement(By.cssSelector(enabledOptionLocator));
+        WebElement downloadsElement = driver.findElement(By.cssSelector(downloadsOptionLocator));
+        WebElement excelElement = driver.findElement(By.id(excelOptionLocator));
+
+        action.moveToElement(enabledElement)
+                .pause(1000).moveToElement(downloadsElement)
+                .pause(1000).moveToElement(excelElement).build().perform();
+        SeleniumUtils.waitPlease(2); //Just For Demo
+    }
+
+    @Test(priority = 6)
     public void dragAndDropTest1() {
         driver.get("https://demos.telerik.com/kendo-ui/dragdrop/index");
         Actions actions = new Actions(driver);
