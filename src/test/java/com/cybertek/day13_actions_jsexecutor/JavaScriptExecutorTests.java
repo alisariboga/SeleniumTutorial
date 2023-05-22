@@ -64,7 +64,7 @@ public class JavaScriptExecutorTests {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         SeleniumUtils.waitPlease(2);
         //Scroll until footerLink is not visible
-        //ones you see footerLink, script will stop scroling
+        //ones you see footerLink, script will stop scrolling
         js.executeScript("arguments[0].scrollIntoView(true)", footerLink);
         SeleniumUtils.waitPlease(2);
         //to click with jsExecutor
