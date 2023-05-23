@@ -3,12 +3,16 @@ package com.cybertek.utilities;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class VYTrackUtils {
     //we don't want to access these variables outside.
     private static String usernameLocator = "prependedInput";
     private static String passwordLocator = "prependedInput2";
-
+    private static String loaderMaskLocator = "div[class='loader-mask shown']";
 
     /**
      * Login into vytrack application
@@ -45,5 +49,23 @@ public class VYTrackUtils {
         //driver.findElement(By.xpath(moduleLocator)).click();
         SeleniumUtils.clickWithWait(driver, By.xpath(moduleLocator), 5);
         SeleniumUtils.waitPlease(4);
+    }
+
+    /**
+     * Waits until loader screen present. If loader screen will not pop up at all,
+     * NoSuchElementException will be handled but try/catxh block
+     * Thus, we can continue in any case
+     *
+     * @param driver
+     */
+    public static void waitUntilLoaderScreenDisappear(WebDriver driver) {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Long.parseLong(ConfigurationReader.getProperty("excplicitwait"))));
+            wait.until(ExpectedConditions.invisibilityOf(driver.findElement(By.cssSelector(loaderMaskLocator))));
+        } catch (Exception e) {
+            System.out.println(e + " :: Loader mask doesn't present");
+        }
+
+
     }
 }
