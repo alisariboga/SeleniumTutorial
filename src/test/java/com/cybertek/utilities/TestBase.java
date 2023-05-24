@@ -1,4 +1,4 @@
-package com.cybertek.tests.day14_properties_singleton_driver_test_base;
+package com.cybertek.utilities;
 
 import com.cybertek.utilities.ConfigurationReader;
 import com.cybertek.utilities.Driver;

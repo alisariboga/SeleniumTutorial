@@ -1,7 +1,7 @@
 package com.cybertek.tests.day15_review;
 
 import com.cybertek.pages.vytrack.CalendarEventsPage;
-import com.cybertek.tests.day14_properties_singleton_driver_test_base.TestBase;
+import com.cybertek.utilities.TestBase;
 import com.cybertek.utilities.ConfigurationReader;
 import com.cybertek.utilities.VYTrackUtils;
 import org.openqa.selenium.By;

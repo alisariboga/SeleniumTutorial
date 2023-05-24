@@ -1,7 +1,6 @@
 package com.cybertek.tests.day17_webtables_day2;
 
-import com.cybertek.tests.day14_properties_singleton_driver_test_base.TestBase;
-import com.cybertek.utilities.SeleniumUtils;
+import com.cybertek.utilities.TestBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
