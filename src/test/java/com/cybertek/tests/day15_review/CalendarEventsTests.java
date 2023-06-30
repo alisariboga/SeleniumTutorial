@@ -24,7 +24,7 @@ public class CalendarEventsTests extends TestBase {
 
         //go to Calendar Events
         VYTrackUtils.navigateToModule(driver, "Activities", "Calendar Events");
-        //since vytrack displays overlay screen durin loading of the page
+        //since vytrack displays overlay screen during loading of the page
         //we have wait, until that overlay screen disappear
         VYTrackUtils.waitUntilLoaderScreenDisappear(driver);
         driver.findElement(By.cssSelector(calendarPage.createCalendarEventBtnLocator)).click();
